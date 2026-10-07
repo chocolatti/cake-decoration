@@ -1,0 +1,67 @@
+body {
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 100;
+    background-color: #f7eee5;
+    }
+
+h1 {
+  margin-top: 30px;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+#decorations {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  width: 500px;
+  margin: 0 auto 30px;
+  padding: 15px;
+
+  border: 2px solid black;
+  background-color: white;
+}
+
+#decorations img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: contain;
+  cursor: grab;
+}
+
+
+#decorations img:active {
+  cursor: grabbing;
+}
+
+#cake {
+  position: relative;
+  width: 700px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+#cake-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.placed-decoration {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
