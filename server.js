@@ -18,8 +18,11 @@ const server = app.listen(port, () => {
 
 const io = socketIO(server);
 
+let placedDecorations = [];
+
 io.on('connection', (socket) => {
   console.log("New participant:", socket.id);
+  socket.emit("decorations", placedDecorations);
 
   socket.on("decoration", (arg) => {
     console.log(arg);
