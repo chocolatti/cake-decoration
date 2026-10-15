@@ -46,6 +46,7 @@ p {
 
 #cake {
   position: relative;
+  overflow: visible;
   width: 700px;
   height: 500px;
   margin: 0 auto;
@@ -64,4 +65,157 @@ p {
   object-fit: contain;
   transform: translate(-50%, -50%);
   pointer-events: none;
+}
+
+#candle {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#candleImage{
+  width: 60px;
+  height: 80px;
+  cursor: grab;
+  object-fit: contain;
+}
+
+#candle:hover #candleImage {
+  transform: scale(1.1);
+}
+
+body.dark-mode {
+  background-color: #191820;
+  color: #f7eee5;
+  transition: background-color 0.4s, color 0.4s ease;
+}
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  z-index: 9999;
+  pointer-events: none;
+  animation-name: confetti-fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(350px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.party-popper {
+  position: absolute;
+  z-index: 1001;
+  font-size: 50px;
+  pointer-events: none;
+  animation: party-popper 1s ease-out forwards;
+}
+
+@keyframes popper-burst {
+  0% {
+    transform: scale(0.2) rotate(-30deg);
+    opacity: 0;
+  }
+  30% {
+    transform: scale(1.5) rotate(15deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8) rotate(30deg) translateY(-80px);
+    opacity: 0;
+  }
+}
+
+#baddecorations {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 500px;
+  min-height: 100px;
+  margin: 15px auto;
+  padding: 15px;
+  background-color: #f7eee5;
+  border: 2px dashed #a87965;
+  border-radius: 12px;
+}
+
+.bad-decoration {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  cursor:grab;
+}
+
+.bad-decoration:active {
+  cursor: grabbing;
+}
+
+.cry-face {
+  position: fixed;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  font-size: 100px;
+  pointer-events: none;
+  animation: cry-face 2s ease-out forwards;
+}
+
+@keyframes cry-face {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5); rotate(-15deg);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1.2); rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+h3 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#cakeButtons {
+  display: flex;
+  visibility: visible;
+  justify-content: center;
+  z-index: 1000;
+  gap: 20px;
+  margin-top: 20px auto;
+}
+
+#cakeButtons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  visibility: visible;
+  border-radius: 9px;
+  cursor: pointer;
+  background-color: #a87965;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#cakeButtons button:hover {
+  background-color: #8c5e4d;
+}
+
+#cakeButtons button:active {
+  transform: scale(0.95);
 }
