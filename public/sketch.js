@@ -146,8 +146,6 @@ function showPoppers() {
         popper.classList.add("party-popper");
         popper.textContent = "🎉";
 
-        popper.style.left = position.left;
-        popper.style.top = position.top;
         popper.style.animationDelay = (index * 0.15) + "s";
 
         cake.appendChild(popper);
